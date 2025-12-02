@@ -135,14 +135,19 @@
 <div class="main-image"><img src="https://img2.pic.in.th/pic/IMG_382285f3429be8a764f2.jpeg" alt="46TH PLW GAMES" /></div>
 <button class="enter" onclick="enterSite()">เข้าหน้าสู่หลัก</button></div>
 <script>
+    // ⚠️ ใส่ URL Web App ของคุณที่ได้จากการ Deploy ที่นี่
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwwJzP_jTHieO4asdyGAJk1hYHxP5gYSIZu2XNp_myLqtAqxmMMsekofM4Xl3GguKlvCQ/exec';
+
     function enterSite() {
       sessionStorage.setItem('allowAppAccess', 'true');
       document.body.classList.add('fade-out');
+      
       setTimeout(() => {
-        window.location.href = "vote.html"; 
+        // ✅ แก้ไข: ต้องส่งไปที่หน้า login ผ่าน URL Parameter
+        window.top.location.href = WEB_APP_URL + "?page=login"; 
       }, 1000);
     }
-  </script>
+</script>
 </div>
 </div>
 </body>
